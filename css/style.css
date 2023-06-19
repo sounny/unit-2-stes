@@ -1,1 +1,11 @@
 /*Add CSS styles here*/
+
+.Act-5-Border {
+    border: 2px solid darkcyan;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    padding-left: 30px;
+    padding-right: 40px;
+    width:fit-content;
+  }
+  
