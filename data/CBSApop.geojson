@@ -1,0 +1,605 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "New York-Newark-Jersey City, NY-NJ-PA",
+        "PopRank": 1,
+        "2022-pop-est": 19617869
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9708,
+          40.68295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Los Angeles-Long Beach-Anaheim, CA",
+        "PopRank": 2,
+        "2022-pop-est": 12872322
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.25703,
+          34.05513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Chicago-Naperville-Elgin, IL-IN-WI",
+        "PopRank": 3,
+        "2022-pop-est": 9441957
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.66063,
+          41.87897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Dallas-Fort Worth-Arlington, TX",
+        "PopRank": 4,
+        "2022-pop-est": 7943685
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.784359,
+          32.736212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Houston-The Woodlands-Sugar Land, TX",
+        "PopRank": 5,
+        "2022-pop-est": 7340118
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.361416,
+          29.784753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+        "PopRank": 6,
+        "2022-pop-est": 6373756
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.014683,
+          38.912097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+        "PopRank": 7,
+        "2022-pop-est": 6241164
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.168428,
+          39.990821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Atlanta-Sandy Springs-Roswell, GA",
+        "PopRank": 8,
+        "2022-pop-est": 6222106
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.414581,
+          33.769805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Miami-Fort Lauderdale-West Palm Beach, FL",
+        "PopRank": 9,
+        "2022-pop-est": 6139340
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.210268,
+          25.766368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Phoenix-Mesa-Scottsdale, AZ",
+        "PopRank": 10,
+        "2022-pop-est": 5015678
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.070892,
+          33.60503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Boston-Cambridge-Newton, MA-NH",
+        "PopRank": 11,
+        "2022-pop-est": 4900550
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.048611,
+          42.355492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Riverside-San Bernardino-Ontario, CA",
+        "PopRank": 12,
+        "2022-pop-est": 4667558
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.36368,
+          33.949274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Francisco-Oakland-Hayward, CA",
+        "PopRank": 13,
+        "2022-pop-est": 4579599
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.431272,
+          37.778008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Detroit-Warren-Dearborn, MI",
+        "PopRank": 14,
+        "2022-pop-est": 4345761
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.164515,
+          42.398649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Seattle-Tacoma-Bellevue, WA",
+        "PopRank": 15,
+        "2022-pop-est": 4034248
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.331537,
+          47.673455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Minneapolis-St. Paul-Bloomington, MN-WI",
+        "PopRank": 16,
+        "2022-pop-est": 3693729
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.266563,
+          44.96313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Tampa-St. Petersburg-Clearwater, FL",
+        "PopRank": 17,
+        "2022-pop-est": 3290730
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.495716,
+          27.935231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Diego-Carlsbad, CA",
+        "PopRank": 18,
+        "2022-pop-est": 3276208
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15529,
+          32.72793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Denver-Aurora-Lakewood, CO",
+        "PopRank": 19,
+        "2022-pop-est": 2985871
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.985798,
+          39.740959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Baltimore-Columbia-Towson, MD",
+        "PopRank": 20,
+        "2022-pop-est": 2835672
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.649533,
+          39.319732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "St. Louis, MO-IL",
+        "PopRank": 21,
+        "2022-pop-est": 2801319
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.239861,
+          38.635957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Orlando-Kissimmee-Sanford, FL",
+        "PopRank": 22,
+        "2022-pop-est": 2764182
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.293691,
+          28.41959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Charlotte-Concord-Gastonia, NC-SC",
+        "PopRank": 23,
+        "2022-pop-est": 2756069
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.81711,
+          35.19534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Antonio-New Braunfels, TX",
+        "PopRank": 24,
+        "2022-pop-est": 2655342
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.588562,
+          29.374994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Portland-Vancouver-Hillsboro, OR-WA",
+        "PopRank": 25,
+        "2022-pop-est": 2509489
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.650095,
+          45.533467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Austin-Round Rock, TX",
+        "PopRank": 26,
+        "2022-pop-est": 2421115
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.836521,
+          30.222346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Sacramento--Roseville--Arden-Arcade, CA",
+        "PopRank": 27,
+        "2022-pop-est": 2416702
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.466786,
+          38.57873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Pittsburgh, PA",
+        "PopRank": 28,
+        "2022-pop-est": 2349172
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.838617,
+          40.860198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Las Vegas-Henderson-Paradise, NV",
+        "PopRank": 29,
+        "2022-pop-est": 2322985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.279104,
+          36.190364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Cincinnati, OH-KY-IN",
+        "PopRank": 30,
+        "2022-pop-est": 2265051
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.543959,
+          39.14767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Kansas City, MO-KS",
+        "PopRank": 31,
+        "2022-pop-est": 2209494
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.541461,
+          39.051003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Columbus, OH",
+        "PopRank": 32,
+        "2022-pop-est": 2161511
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.985586,
+          39.98072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Indianapolis-Carmel-Anderson, IN",
+        "PopRank": 33,
+        "2022-pop-est": 2141779
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.143415,
+          39.785871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Cleveland-Elyria, OH",
+        "PopRank": 34,
+        "2022-pop-est": 2063132
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.65133,
+          41.496551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Nashville-Davidson--Murfreesboro--Franklin, TN",
+        "PopRank": 35,
+        "2022-pop-est": 2046828
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.834683,
+          36.236907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Jose-Sunnyvale-Santa Clara, CA",
+        "PopRank": 36,
+        "2022-pop-est": 1938524
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.883844,
+          37.354559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Virginia Beach-Norfolk-Newport News, VA-NC",
+        "PopRank": 37,
+        "2022-pop-est": 1806840
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.033786,
+          36.834539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Jacksonville, FL",
+        "PopRank": 38,
+        "2022-pop-est": 1675668
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.660992,
+          30.369914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Providence-Warwick, RI-MA",
+        "PopRank": 39,
+        "2022-pop-est": 1673802
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.419577,
+          41.826746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Milwaukee-Waukesha-West Allis, WI",
+        "PopRank": 40,
+        "2022-pop-est": 1559792
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.948334,
+          43.063146
+        ]
+      }
+    }
+  ]
+}

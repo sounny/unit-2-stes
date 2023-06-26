@@ -1,0 +1,885 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "New York-Newark-Jersey City, NY-NJ-PA",
+        "PopRank": 1,
+        "2022-pop-est": 19617869,
+        "medAQI-2016": 53,
+        "medAQI-2017": 52,
+        "medAQI-2018": 53,
+        "medAQI-2019": 51,
+        "medAQI-2020": 47,
+        "medAQI-2021": 49,
+        "medAQI-2022": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9708,
+          40.68295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Los Angeles-Long Beach-Anaheim, CA",
+        "PopRank": 2,
+        "2022-pop-est": 12872322,
+        "medAQI-2016": 75,
+        "medAQI-2017": 79,
+        "medAQI-2018": 78,
+        "medAQI-2019": 72,
+        "medAQI-2020": 84,
+        "medAQI-2021": 77,
+        "medAQI-2022": 70
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.25703,
+          34.05513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Chicago-Naperville-Elgin, IL-IN-WI",
+        "PopRank": 3,
+        "2022-pop-est": 9441957,
+        "medAQI-2016": 54,
+        "medAQI-2017": 52,
+        "medAQI-2018": 57,
+        "medAQI-2019": 55,
+        "medAQI-2020": 55,
+        "medAQI-2021": 58,
+        "medAQI-2022": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.66063,
+          41.87897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Dallas-Fort Worth-Arlington, TX",
+        "PopRank": 4,
+        "2022-pop-est": 7943685,
+        "medAQI-2016": 48,
+        "medAQI-2017": 50,
+        "medAQI-2018": 50,
+        "medAQI-2019": 51,
+        "medAQI-2020": 48,
+        "medAQI-2021": 49,
+        "medAQI-2022": 51
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.784359,
+          32.736212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Houston-The Woodlands-Sugar Land, TX",
+        "PopRank": 5,
+        "2022-pop-est": 7340118,
+        "medAQI-2016": 52,
+        "medAQI-2017": 50,
+        "medAQI-2018": 51,
+        "medAQI-2019": 52,
+        "medAQI-2020": 52,
+        "medAQI-2021": 54,
+        "medAQI-2022": 57
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.361416,
+          29.784753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+        "PopRank": 6,
+        "2022-pop-est": 6373756,
+        "medAQI-2016": 51,
+        "medAQI-2017": 53,
+        "medAQI-2018": 49,
+        "medAQI-2019": 47,
+        "medAQI-2020": 43,
+        "medAQI-2021": 46,
+        "medAQI-2022": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.014683,
+          38.912097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+        "PopRank": 7,
+        "2022-pop-est": 6241164,
+        "medAQI-2016": 57,
+        "medAQI-2017": 55,
+        "medAQI-2018": 55,
+        "medAQI-2019": 51,
+        "medAQI-2020": 48,
+        "medAQI-2021": 51,
+        "medAQI-2022": 48
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.168428,
+          39.990821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Atlanta-Sandy Springs-Roswell, GA",
+        "PopRank": 8,
+        "2022-pop-est": 6222106,
+        "medAQI-2016": 57,
+        "medAQI-2017": 51,
+        "medAQI-2018": 47,
+        "medAQI-2019": 52,
+        "medAQI-2020": 44,
+        "medAQI-2021": 47,
+        "medAQI-2022": 48
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.414581,
+          33.769805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Miami-Fort Lauderdale-West Palm Beach, FL",
+        "PopRank": 9,
+        "2022-pop-est": 6139340,
+        "medAQI-2016": 48,
+        "medAQI-2017": 47,
+        "medAQI-2018": 43,
+        "medAQI-2019": 41,
+        "medAQI-2020": 43,
+        "medAQI-2021": 44,
+        "medAQI-2022": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.210268,
+          25.766368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Phoenix-Mesa-Scottsdale, AZ",
+        "PopRank": 10,
+        "2022-pop-est": 5015678,
+        "medAQI-2016": 74,
+        "medAQI-2017": 84,
+        "medAQI-2018": 77,
+        "medAQI-2019": 74,
+        "medAQI-2020": 119,
+        "medAQI-2021": 123,
+        "medAQI-2022": 77
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.070892,
+          33.60503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Boston-Cambridge-Newton, MA-NH",
+        "PopRank": 11,
+        "2022-pop-est": 4900550,
+        "medAQI-2016": 46,
+        "medAQI-2017": 51,
+        "medAQI-2018": 45,
+        "medAQI-2019": 43,
+        "medAQI-2020": 42,
+        "medAQI-2021": 40,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.048611,
+          42.355492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Riverside-San Bernardino-Ontario, CA",
+        "PopRank": 12,
+        "2022-pop-est": 4667558,
+        "medAQI-2016": 90,
+        "medAQI-2017": 98,
+        "medAQI-2018": 97,
+        "medAQI-2019": 89,
+        "medAQI-2020": 98,
+        "medAQI-2021": 97,
+        "medAQI-2022": 84
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.36368,
+          33.949274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Francisco-Oakland-Hayward, CA",
+        "PopRank": 13,
+        "2022-pop-est": 4579599,
+        "medAQI-2016": 47,
+        "medAQI-2017": 52,
+        "medAQI-2018": 53,
+        "medAQI-2019": 43,
+        "medAQI-2020": 45,
+        "medAQI-2021": 46,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.431272,
+          37.778008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Detroit-Warren-Dearborn, MI",
+        "PopRank": 14,
+        "2022-pop-est": 4345761,
+        "medAQI-2016": 53,
+        "medAQI-2017": 52,
+        "medAQI-2018": 51,
+        "medAQI-2019": 53,
+        "medAQI-2020": 48,
+        "medAQI-2021": 54,
+        "medAQI-2022": 54
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.164515,
+          42.398649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Seattle-Tacoma-Bellevue, WA",
+        "PopRank": 15,
+        "2022-pop-est": 4034248,
+        "medAQI-2016": 42,
+        "medAQI-2017": 47,
+        "medAQI-2018": 44,
+        "medAQI-2019": 45,
+        "medAQI-2020": 43,
+        "medAQI-2021": 43,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.331537,
+          47.673455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Minneapolis-St. Paul-Bloomington, MN-WI",
+        "PopRank": 16,
+        "2022-pop-est": 3693729,
+        "medAQI-2016": 46,
+        "medAQI-2017": 51,
+        "medAQI-2018": 51,
+        "medAQI-2019": 46,
+        "medAQI-2020": 44,
+        "medAQI-2021": 44,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.266563,
+          44.96313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Tampa-St. Petersburg-Clearwater, FL",
+        "PopRank": 17,
+        "2022-pop-est": 3290730,
+        "medAQI-2016": 44,
+        "medAQI-2017": 45,
+        "medAQI-2018": 43,
+        "medAQI-2019": 43,
+        "medAQI-2020": 44,
+        "medAQI-2021": 44,
+        "medAQI-2022": 46
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.495716,
+          27.935231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Diego-Carlsbad, CA",
+        "PopRank": 18,
+        "2022-pop-est": 3276208,
+        "medAQI-2016": 66,
+        "medAQI-2017": 65,
+        "medAQI-2018": 64,
+        "medAQI-2019": 64,
+        "medAQI-2020": 71,
+        "medAQI-2021": 64,
+        "medAQI-2022": 49
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.15529,
+          32.72793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Denver-Aurora-Lakewood, CO",
+        "PopRank": 19,
+        "2022-pop-est": 2985871,
+        "medAQI-2016": 61,
+        "medAQI-2017": 62,
+        "medAQI-2018": 64,
+        "medAQI-2019": 58,
+        "medAQI-2020": 58,
+        "medAQI-2021": 61,
+        "medAQI-2022": 61
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.985798,
+          39.740959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Baltimore-Columbia-Towson, MD",
+        "PopRank": 20,
+        "2022-pop-est": 2835672,
+        "medAQI-2016": 49,
+        "medAQI-2017": 47,
+        "medAQI-2018": 47,
+        "medAQI-2019": 46,
+        "medAQI-2020": 42,
+        "medAQI-2021": 45,
+        "medAQI-2022": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.649533,
+          39.319732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "St. Louis, MO-IL",
+        "PopRank": 21,
+        "2022-pop-est": 2801319,
+        "medAQI-2016": 51,
+        "medAQI-2017": 52,
+        "medAQI-2018": 53,
+        "medAQI-2019": 54,
+        "medAQI-2020": 53,
+        "medAQI-2021": 55,
+        "medAQI-2022": 52
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.239861,
+          38.635957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Orlando-Kissimmee-Sanford, FL",
+        "PopRank": 22,
+        "2022-pop-est": 2764182,
+        "medAQI-2016": 42,
+        "medAQI-2017": 43,
+        "medAQI-2018": 38,
+        "medAQI-2019": 39,
+        "medAQI-2020": 39,
+        "medAQI-2021": 39,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.293691,
+          28.41959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Charlotte-Concord-Gastonia, NC-SC",
+        "PopRank": 23,
+        "2022-pop-est": 2756069,
+        "medAQI-2016": 46,
+        "medAQI-2017": 48,
+        "medAQI-2018": 45,
+        "medAQI-2019": 48,
+        "medAQI-2020": 42,
+        "medAQI-2021": 46,
+        "medAQI-2022": 47
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.81711,
+          35.19534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Antonio-New Braunfels, TX",
+        "PopRank": 24,
+        "2022-pop-est": 2655342,
+        "medAQI-2016": 43,
+        "medAQI-2017": 43,
+        "medAQI-2018": 43,
+        "medAQI-2019": 49,
+        "medAQI-2020": 49,
+        "medAQI-2021": 48,
+        "medAQI-2022": 51
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.588562,
+          29.374994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Portland-Vancouver-Hillsboro, OR-WA",
+        "PopRank": 25,
+        "2022-pop-est": 2509489,
+        "medAQI-2016": 35,
+        "medAQI-2017": 40,
+        "medAQI-2018": 38,
+        "medAQI-2019": 38,
+        "medAQI-2020": 37,
+        "medAQI-2021": 37,
+        "medAQI-2022": 34
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.650095,
+          45.533467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Austin-Round Rock, TX",
+        "PopRank": 26,
+        "2022-pop-est": 2421115,
+        "medAQI-2016": 42,
+        "medAQI-2017": 43,
+        "medAQI-2018": 44,
+        "medAQI-2019": 44,
+        "medAQI-2020": 44,
+        "medAQI-2021": 43,
+        "medAQI-2022": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.836521,
+          30.222346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Sacramento--Roseville--Arden-Arcade, CA",
+        "PopRank": 27,
+        "2022-pop-est": 2416702,
+        "medAQI-2016": 58,
+        "medAQI-2017": 60,
+        "medAQI-2018": 60,
+        "medAQI-2019": 51,
+        "medAQI-2020": 60,
+        "medAQI-2021": 62,
+        "medAQI-2022": 54
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.466786,
+          38.57873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Pittsburgh, PA",
+        "PopRank": 28,
+        "2022-pop-est": 2349172,
+        "medAQI-2016": 58,
+        "medAQI-2017": 59,
+        "medAQI-2018": 55,
+        "medAQI-2019": 55,
+        "medAQI-2020": 49,
+        "medAQI-2021": 53,
+        "medAQI-2022": 46
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.838617,
+          40.860198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Las Vegas-Henderson-Paradise, NV",
+        "PopRank": 29,
+        "2022-pop-est": 2322985,
+        "medAQI-2016": 58,
+        "medAQI-2017": 58,
+        "medAQI-2018": 61,
+        "medAQI-2019": 54,
+        "medAQI-2020": 61,
+        "medAQI-2021": 59,
+        "medAQI-2022": 63
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.279104,
+          36.190364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Cincinnati, OH-KY-IN",
+        "PopRank": 30,
+        "2022-pop-est": 2265051,
+        "medAQI-2016": 53,
+        "medAQI-2017": 51,
+        "medAQI-2018": 52,
+        "medAQI-2019": 53,
+        "medAQI-2020": 49,
+        "medAQI-2021": 52,
+        "medAQI-2022": 51
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.543959,
+          39.14767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Kansas City, MO-KS",
+        "PopRank": 31,
+        "2022-pop-est": 2209494,
+        "medAQI-2016": 46,
+        "medAQI-2017": 48,
+        "medAQI-2018": 47,
+        "medAQI-2019": 47,
+        "medAQI-2020": 48,
+        "medAQI-2021": 50,
+        "medAQI-2022": 48
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.541461,
+          39.051003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Columbus, OH",
+        "PopRank": 32,
+        "2022-pop-est": 2161511,
+        "medAQI-2016": 42,
+        "medAQI-2017": 42,
+        "medAQI-2018": 44,
+        "medAQI-2019": 46,
+        "medAQI-2020": 41,
+        "medAQI-2021": 43,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.985586,
+          39.98072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Indianapolis-Carmel-Anderson, IN",
+        "PopRank": 33,
+        "2022-pop-est": 2141779,
+        "medAQI-2016": 49,
+        "medAQI-2017": 48,
+        "medAQI-2018": 50,
+        "medAQI-2019": 54,
+        "medAQI-2020": 49,
+        "medAQI-2021": 53,
+        "medAQI-2022": 48
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.143415,
+          39.785871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Cleveland-Elyria, OH",
+        "PopRank": 34,
+        "2022-pop-est": 2063132,
+        "medAQI-2016": 48,
+        "medAQI-2017": 46,
+        "medAQI-2018": 48,
+        "medAQI-2019": 50,
+        "medAQI-2020": 47,
+        "medAQI-2021": 52,
+        "medAQI-2022": 47
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.65133,
+          41.496551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Nashville-Davidson--Murfreesboro--Franklin, TN",
+        "PopRank": 35,
+        "2022-pop-est": 2046828,
+        "medAQI-2016": 45,
+        "medAQI-2017": 45,
+        "medAQI-2018": 43,
+        "medAQI-2019": 45,
+        "medAQI-2020": 43,
+        "medAQI-2021": 46,
+        "medAQI-2022": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.834683,
+          36.236907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "San Jose-Sunnyvale-Santa Clara, CA",
+        "PopRank": 36,
+        "2022-pop-est": 1938524,
+        "medAQI-2016": 44,
+        "medAQI-2017": 45,
+        "medAQI-2018": 47,
+        "medAQI-2019": 43,
+        "medAQI-2020": 45,
+        "medAQI-2021": 46,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.883844,
+          37.354559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Virginia Beach-Norfolk-Newport News, VA-NC",
+        "PopRank": 37,
+        "2022-pop-est": 1806840,
+        "medAQI-2016": 37,
+        "medAQI-2017": 39,
+        "medAQI-2018": 36,
+        "medAQI-2019": 40,
+        "medAQI-2020": 34,
+        "medAQI-2021": 38,
+        "medAQI-2022": 37
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.033786,
+          36.834539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Jacksonville, FL",
+        "PopRank": 38,
+        "2022-pop-est": 1675668,
+        "medAQI-2016": 43,
+        "medAQI-2017": 42,
+        "medAQI-2018": 41,
+        "medAQI-2019": 43,
+        "medAQI-2020": 43,
+        "medAQI-2021": 43,
+        "medAQI-2022": 46
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.660992,
+          30.369914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Providence-Warwick, RI-MA",
+        "PopRank": 39,
+        "2022-pop-est": 1673802,
+        "medAQI-2016": 44,
+        "medAQI-2017": 43,
+        "medAQI-2018": 44,
+        "medAQI-2019": 44,
+        "medAQI-2020": 43,
+        "medAQI-2021": 41,
+        "medAQI-2022": 42
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.419577,
+          41.826746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CBSA": "Milwaukee-Waukesha-West Allis, WI",
+        "PopRank": 40,
+        "2022-pop-est": 1559792,
+        "medAQI-2016": 42,
+        "medAQI-2017": 42,
+        "medAQI-2018": 44,
+        "medAQI-2019": 44,
+        "medAQI-2020": 41,
+        "medAQI-2021": 47,
+        "medAQI-2022": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.948334,
+          43.063146
+        ]
+      }
+    }
+  ]
+}

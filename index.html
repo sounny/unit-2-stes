@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="author" content="Jessica Steslow">
-            <title></title>
+            <title>Air Quality in Metro Areas USA</title>
 
         <!--put your external stylesheet links here-->
         <link rel="stylesheet" href="css/style.css">
@@ -20,18 +20,21 @@
 
     <body>
         <h1>Geog 575 Unit 2</h1>
-        <h3>Written by Jessica Steslow</h3>
+        <h4>Written by Jessica Steslow</h4>
         <p>This website contains code/practice for:</p>
         <ul>
             <li>Activity 5</li>
+            <li>Activity 6</li>
         </ul>
         <hr>
-        <div class="Act-5-Border">
-            <h2>Annual Median Air Quality Index in Populous Cities in the USA</h2>
-            <p>Air Quality Index (AQI) as defined and tracked by the US Enironmental Protection Agency (EPA).
-            <br>Median AQI data shown from years 2016-2022.</p>
-            <p>Data consolidated by Core Based Statistical Area (CBSA), how EPA defines specific metropolitan areas.</p>
-            <div id="map" style="height:1000px; width:1400px;"></div>
+        <div class="Activity-Border">
+            <h2>Annual Median Air Quality Index in USA Metro Areas</h2>
+            <p>The Air Quality Index (AQI) is an aggregated term to evaluate air quality from multiple air contaminants.
+                <br> The data for this map shows median AQI per year per metro area, as defined and tracked by the US Enironmental Protection Agency (EPA).</p>
+            <p>Metro areas are defined by EPA Core Based Statistical Area (CBSA).</p>
+            <p>The top 40 most populated metro areas are shown, with their Median AQI from years 2016-2021.</p>
+            <div id="map"></div>
+            <!--<div id="panel"></div> module used panel but solution code uses L.Control.extend instead-->
             <p>Data Source: <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual" target="_blank">EPA Air Data Annual Summary</a></p>
         </div>
 

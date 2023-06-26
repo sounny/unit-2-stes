@@ -1,11 +1,63 @@
 /*Add CSS styles here*/
 
-.Act-5-Border {
-    border: 2px solid darkcyan;
-    border-radius: 20px;
-    background-color: whitesmoke;
-    padding-left: 30px;
-    padding-right: 40px;
-    width:fit-content;
-  }
-  
+.Activity-Border {
+  border: 2px solid darkcyan;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  padding-left: 20px;
+  padding-right: 20px;
+  width:93%;
+}
+
+body {
+  padding-top: 0px;
+  padding-left: 10px;
+  max-width: 1400px;
+  font-family: 'Georgia', serif;
+}
+
+.leaflet-popup-content p {
+  margin: 0.2em 0;
+}
+
+#map {
+  height: 800px;
+  width: 100%;
+  display: inline-block;
+}
+
+#panel {    
+  width: 25%;    
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  line-height: 42px;
+  border: 2px solid darkcyan;
+}
+
+.range-slider {  
+  width: auto;
+  margin:0.8rem;
+}  
+
+.step {  
+  width: 2.5rem;
+  border: 1px solid grey;
+  border-radius: 2px;
+  align-items: center;
+  padding:1px;
+}  
+
+.step img {  
+  width: 98%;
+  padding:2px;
+  }  
+
+#forward {  
+  float: inline-end;  
+}  
+
+#reverse {  
+  float: inline-start;  
+}

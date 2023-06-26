@@ -1,29 +1,27 @@
-/*Author: Jessica Steslow, 6-19-2023*/
+/*Code from Lab 1 Module 2 lessons with MegaCities.geojson*/
+/*Using Chapter 6 example2.5 code for reference*/
+/*Modified by: Jessica Steslow, 6-25-2023*/
 
 //declare map variable globally so all functions have access
 var map;
 var minValue;
 
-//function to instantiate the Leaflet map
 function createMap(){
-    
-    //create the map, centered apprx. on the center of my US city data
+
+    //create the map
     map = L.map('map', {
-        center: [38, -97],
-        zoom: 4
+        center: [0, 0],
+        zoom: 2
     });
 
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
+    //add OSM base tilelayer
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
     }).addTo(map);
-    
+
     //call getData function
     getData(map);
 };
-
 
 function calcMinValue(data){
     //create empty array to store all data values
@@ -31,9 +29,9 @@ function calcMinValue(data){
     //loop through each city
     for(var city of data.features){
         //loop through each year
-        for(var year = 2016; year <= 2022; year+=1){
+        for(var year = 1985; year <= 2015; year+=5){
               //get population for current year
-              var value = city.properties["medAQI-"+ String(year)];
+              var value = city.properties["Pop_"+ String(year)];
               //add value to array
               allValues.push(value);
         }
@@ -49,36 +47,18 @@ function calcPropRadius(attValue) {
     //constant factor adjusts symbol sizes evenly
     var minRadius = 6;
     //Flannery Apperance Compensation formula
-    var radius = 1.0083 * Math.pow(attValue/minValue,0.5715*1.8) * minRadius //1.8 is custom exaggeration
+    var radius = 1.0083 * Math.pow(attValue/minValue,0.5715) * minRadius
     return radius;
 };
 
-//function to categorize proportional symbol color by AQI value
-function groupPropColor(attValue) {
-    var aqiColor = "";
-    if ( attValue <= 50) {           //Green, Good
-        aqiColor = "#00e400";
-    } else if ( attValue < 100) {    //Yellow, Moderate
-        aqiColor = "#ffff00";
-    } else if ( attValue < 150) {    //Orange, Unhealthy for Sensitive Groups
-        aqiColor = "#ff7e00";
-    } else if ( attValue < 200) {    //Red, Unhealthy
-        aqiColor = "#ff0000";
-    } else if ( attValue < 300) {    //Purple, Very Unhealthy
-        aqiColor = "#8f3f97";
-    } else {                         //Maroon, Hazardous
-        aqiColor = "#7e0023";
-    };
-    return aqiColor;
-}
-
 //function to convert markers to circle markers and add popups
-function pointToLayer(feature, latlng, attributes){
+function pointToLayer(feature, latlng,attributes){
     //Determine which attribute to visualize with proportional symbols
     var attribute = attributes[0];
 
     //create marker options
     var options = {
+        fillColor: "#ff7800",
         color: "#000",
         weight: 1,
         opacity: 1,
@@ -91,18 +71,15 @@ function pointToLayer(feature, latlng, attributes){
     //Give each feature's circle marker a radius based on its attribute value
     options.radius = calcPropRadius(attValue);
 
-    //Give each featur's circle marker a color based on its attribute value
-    options.fillColor = groupPropColor(attValue);
-
     //create circle marker layer
     var layer = L.circleMarker(latlng, options);
 
     //build popup content string starting with city...Example 2.1 line 24
-    var popupContent = "<p><b>Metro:</b> " + feature.properties.CBSA + "</p>";
+    var popupContent = "<p><b>City:</b> " + feature.properties.City + "</p>";
 
     //add formatted attribute to popup content string
-    var year = attribute.split("-")[1];
-    popupContent += "<p><b>Median AQI in " + year + ":</b> " + feature.properties[attribute] + "</p>";
+    var year = attribute.split("_")[1];
+    popupContent += "<p><b>Population in " + year + ":</b> " + feature.properties[attribute] + " million</p>";
 
     //bind the popup to the circle marker
     layer.bindPopup(popupContent, {
@@ -134,16 +111,12 @@ function updatePropSymbols(attribute){
            var radius = calcPropRadius(props[attribute]);
            layer.setRadius(radius);
 
-           //update each feature's color based on attribute values
-           var newColor = groupPropColor(props[attribute]);
-           layer.setStyle({fillColor: newColor});
-
            //add city to popup content string
-           var popupContent = "<p><b>Metro:</b> " + props.CBSA + "</p>";
+           var popupContent = "<p><b>City:</b> " + props.City + "</p>";
 
            //add formatted attribute to panel content string
-           var year = attribute.split("-")[1];
-           popupContent += "<p><b>Median AQI in " + year + ":</b> " + props[attribute] + "</p>";
+           var year = attribute.split("_")[1];
+           popupContent += "<p><b>Population in " + year + ":</b> " + props[attribute] + " million</p>";
 
            //update popup with new content
            popup = layer.getPopup();
@@ -162,8 +135,8 @@ function processData(data){
 
     //push each attribute name into attributes array
     for (var attribute in properties){
-        //only take attributes with Air Quality Index values
-        if (attribute.indexOf("AQI") > -1){
+        //only take attributes with population values
+        if (attribute.indexOf("Pop") > -1){
             attributes.push(attribute);
         };
     };
@@ -270,7 +243,7 @@ function createSequenceControls(attributes){
 
 function getData(map){
     //load the data
-    fetch("data/AQI_annual.geojson")
+    fetch("data/MegaCities.geojson")
         .then(function(response){
             return response.json();
         })
