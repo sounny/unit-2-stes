@@ -8,8 +8,9 @@
 
         <!--put your external stylesheet links here-->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="lib/leaflet/leaflet.css"
-        <!--[if IE<9]>
+        <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+        
+        <!-- [if IE<9]>
             <link rel="stylesheet" href="css/style.ie.css">
         <![endif]-->
 
@@ -18,29 +19,150 @@
         
     </head>
 
-    <body>
-        <h1>Geog 575 Unit 2</h1>
-        <h4>Written by Jessica Steslow</h4>
-        <p>This website contains code/practice for:</p>
-        <ul>
-            <li>Activity 5</li>
-            <li>Activity 6</li>
-        </ul>
-        <hr>
-        <div class="Activity-Border">
-            <h2>Annual Median Air Quality Index in USA Metro Areas</h2>
-            <p>The Air Quality Index (AQI) is an aggregated term to evaluate air quality from multiple air contaminants.
-                <br> The data for this map shows median AQI per year per metro area, as defined and tracked by the US Enironmental Protection Agency (EPA).</p>
-            <p>Metro areas are defined by EPA Core Based Statistical Area (CBSA).</p>
-            <p>The top 40 most populated metro areas are shown, with their Median AQI from years 2016-2021.</p>
-            <div id="map"></div>
-            <!--<div id="panel"></div> module used panel but solution code uses L.Control.extend instead-->
-            <p>Data Source: <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual" target="_blank">EPA Air Data Annual Summary</a></p>
+    <body id="grad1">   
+        <div class="header">
+            <h1>Air Quality in USA Metro Areas</h1>
+            <p>Using the Air Quality Index (AQI) as measured and collected by the U.S. Environmental Protection Agency (EPA).</p>
+            <div class="nametag">
+                <p>Jessica Steslow <br>Geog 575 <br>Lab 1 Draft</p>
+            </div>
         </div>
+        
+        <!-- I don't think this site needs a navbar
+        <div class="topnav">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#" style="float:right">Link</a>
+        </div>
+        -->
+        
+        <div class="row">
+            <div class="leftcolumn">
+            <div class="card">
+                <h2>Project Summary</h2>
+                <p>My project is to evaluate geographical phenomena that changes over time by creating an interactive map.
+                     I chose to evaluate air quality in the United States. The EPA provides data on air quality using a term called AQI, 
+                    and publishes data by metro area and for a variety of time periods.
+                </p>
+                <p>I evaluated air quality in the United States in three ways: Median AQI calculated <b>annually</b>, <b>monthly</b>, and <b>daily</b>.</p>
+                <p><br>Important terms:</p>
+                <dl>
+                    <dt><b>AQI</b></dt>
+                    <dd>The Air Quality Index (AQI) is an aggregated term to evaluate air quality from multiple air pollutants.
+                        The EPA AQI is grouped into one of six categories based on its value and associated health risks. A lower AQI corresponds to cleaner air, 
+                        with little pollution, and a higher AQI corresponds to unhealthy air. For each pollutant, a value of 100 generally corresponds to the 
+                        national air quality standard for public health. The AQI categories are color-coded: green is good, red is bad, maroon is hazardous.</dd>
+                    <dd><br></dd>
+                    <dt><b>CBSA</b></dt>
+                    <dd>U.S. EPA Core Based Statistical Area (CBSA) is a term used for metro areas. I narrowed my analysis to the top 40 most populated metro areas.</dd>
+                </dl>
+            </div>
+            <div class="card">
+                <h2>MegaCities Example</h2>
+                <div class="mapcard" id="mapcard-megacities"></div>
+            </div>
+            <div class="card">
+                <h2>Median Annual AQI in USA Metro Areas 2000-2022</h2>
+                <div class="mapcard"  id="mapcard-annual"></div>
+                <p>This map looks at trends in the median AQI value over the whole year, for the years 2000-2022.</p>
+                <p>AQI is known to vary quite drastically daily, monthly, seasonally, and in response to accute events (wildfires, for example), and thus AQI is typically 
+                    evaluated with more granualar time data. This map explores AQI with "course" time data, looking at the median value over a full year.
+                </p>
+                <p>This analysis shows the yearly median AQI is relatively consistent in metro areas between years. We also see AQI values generally decrease across all metro areas.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Median Monthly AQI in USA Metro Areas 2021</h2>
+                <div class="mapcard"  id="mapcard-monthly"></div>
+                <p>This map evaluates AQI trends in the same metro areas as the first map, but with median AQI calculated per month in 2021.</p>
+                <p>The year 2021 was chosen because it is the most recent full year of data published, using daily AQI data that I consolidated into months. 
+                    The monthly AQI data is more varied than yearly data. The strongest geographic pattern seems to be AQI is higher in the southwest. 
+                    This data also shows higher AQI in the summer season, which is a known pattern with air quality: AQI is usually worse with high heat.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Median Daily AQI in USA Metro Areas 2021</h2>
+                <div class="mapcard"  id="mapcard-daily"></div>
+                <p>This map evaluates AQI trends in the same metro areas as the first two maps, but with median AQI calculated per day in 2021.</p>
+                <p>The time data for this map is much "finer" than the previous two. I wanted to see if I could capture the day to day variations in AQI in comparison
+                    to the more consistent monthly and annual data. The result is a little visually overwhelming, but we do see that AQI can vary drastically in any 
+                    metro area. We also see more frequent spots of high AQI in the summer months across many metros.
+                </p>
+                <p> This data shows Arizona and California have consistently high AQI values. Metros in these states tend to be highly populated with warm and dry climates. 
+                    They are particularly susceptible to effects from high heat, urban emissions, and wildfires.
+                </p>
+            </div>
+            </div>
+            <div class="rightcolumn">
+            <div class="card">
+                <h3 style="margin-bottom:12px;">AQI Pollutants</h3>
+                <div class="flex-container">
+                    <div>CO</div>
+                    <div>NO<sub>2</sub></div>
+                    <div>Ozone</div>
+                    <div>SO<sub>2</sub></div>
+                    <div>PM 10</div>
+                    <div>PM 2.5</div>
+                </div>
+            </div>
+            <div class="card" id="aqi-rating">
+                <h3>AQI Rating</h3>
+                <div>
+                <div class="fakeimg" style="background-color:#00e400; border-top-left-radius: 10px; border-top-right-radius: 10px;">Green -- Good;<br>AQI: 0 to 50</div>
+                <div class="fakeimg" style="background-color:#ffff00;">Yellow -- Moderate;<br>AQI: 51 to 100</div>
+                <div class="fakeimg" style="background-color:#ff7e00;">Orange -- Unhealthy for Sensitive Groups;<br>AQI: 101 to 150</div>
+                <div class="fakeimg" style="background-color:#ff0000; color: white;">Red -- Unhealthy;<br>AQI: 151 to 200</div>
+                <div class="fakeimg" style="background-color:#8f3f97; color: white">Purple -- Very Unhealthy;<br>AQI: 201 to 300</div>
+                <div class="fakeimg" style="background-color:#7e0023; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; color: white">Maroon -- Hazardous;<br>AQI: 301 +</div>
+                </div>
+            </div>
+            <div class="card" style="padding-top:8px;">
+                <h3 style="margin-bottom:12px;">Data Sources</h3>
+                <ul>
+                    <li><a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">AirNow AQI basics</a></li>
+                    <li><a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual" target="_blank">EPA Air Data Annual Summary</a></li>
+                    <li><a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html#AQI" target="_blank">EPA Air Data Daily Summary</a><span style="font-size: 10.5pt;"> (averaged to monthly)</span></li>
+                    <li><a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-metro-and-micro-statistical-areas.html#v2022" target="_blank">2022 CBSA census.gov</a></li>
+                </ul>
+            </div>
+            <div class="card" style="padding-top:8px;">
+                <h3 style="margin-bottom:12px;">Related AQI Links</h3>
+                <ul>
+                    <li><a href="https://gispub.epa.gov/air/trendsreport/2023/#home" target="_blank">EPA AQI Trends 2023 Report</a></li>
+                    <li><a href="https://gispub.epa.gov/airnow/?showgreencontours=false" target="_blank">AirNow.gov Interactive Map</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="clearfix">
+            <div class="box">
+                <p>Author: Jessica Steslow <br>University of Wisconsin-Madison <br>Online GIS Development & Cartography</p>
+            </div>
+            <div class="box" style="text-align: center;">
+                <p>Geog 575 Interactive Cartography <br>Summer 2023 <br> Lab 1</p>
+            </div>
+            <div class="box" style="text-align: right; width:40%">
+                <p>Website formatting: <a href="https://www.w3schools.com/css/css_website_layout.asp">W3 Schools</a> with modifications<br>
+                Interactive maps: <a href="https://leafletjs.com/">Leaflet</a> JavaScript library <br>
+                <span class="moved-attribution"><a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a></span>
+                </p>
+            </div>
+            </div>
+        </div>
+    
+    </body>
+
 
         <!--put your external script links here-->
         <script type="text/javascript" src="lib/leaflet/leaflet-src.js"></script>
         <script type="text/javascript" src="lib/leaflet/leaflet-providers.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/ch6_example3.7.js"></script>
+        <script type="text/javascript" src="js/lab1mod3_annual.js"></script>
+        <script type="text/javascript" src="js/lab1mod3_monthly.js"></script>
+        <script type="text/javascript" src="js/lab1mod3_daily.js"></script>
+
     </body>
 </html>

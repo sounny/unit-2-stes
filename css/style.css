@@ -1,63 +1,399 @@
 /*Add CSS styles here*/
 
-.Activity-Border {
-  border: 2px solid darkcyan;
-  border-radius: 20px;
-  background-color: whitesmoke;
-  padding-left: 20px;
-  padding-right: 20px;
-  width:93%;
-}
-
-body {
-  padding-top: 0px;
-  padding-left: 10px;
-  max-width: 1400px;
-  font-family: 'Georgia', serif;
-}
+/*Styles for map objects*/
 
 .leaflet-popup-content p {
   margin: 0.2em 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#map {
-  height: 800px;
-  width: 100%;
-  display: inline-block;
+.sequence-control-container-day, .sequence-control-container-mon, .sequence-control-container-ann, .sequence-control-container {
+  display:flex;
+  border: 1px solid rgba(30, 143, 255, 0.5);
+  border-radius: 5px;
+  padding: 4px;
+  background-color: rgb(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-#panel {    
-  width: 25%;    
-  padding: 10px;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  line-height: 42px;
-  border: 2px solid darkcyan;
+.sequence-control-container-day {
+  width:350px;
 }
 
-.range-slider {  
+.leaflet-control-zoom {
+  border: 1px solid rgba(30, 143, 255, 0.5) !important;
+}
+
+.leaflet-control-zoom-in {
+  border-top-left-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+}
+
+.leaflet-control-zoom-out {
+  border-bottom-left-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
+.range-slider-day, .range-slider-mon, .range-slider-ann, .range-slider {  
   width: auto;
-  margin:0.8rem;
-}  
+  margin-left:0.5rem;
+  margin-right:0.5rem;
+  order: 2;
+  cursor: pointer;
+}
 
-.step {  
-  width: 2.5rem;
-  border: 1px solid grey;
-  border-radius: 2px;
-  align-items: center;
+.range-slider-day {
+  width:280px;
+}
+
+.step-day, .step-mon, .step-ann, .step {  
+  width: 2.0rem;
+  border: 0px solid #eee;
+  border-radius: 3px;
+  background: #e0e3e6;
   padding:1px;
-}  
+}
 
-.step img {  
+.step-day:hover, .step-mon:hover, .step-ann:hover {
+  background-color: rgb(215, 233, 239);
+  cursor: pointer;
+}
+
+.step-day:active, .step-mon:active, .step-ann:active {
+  background-color: rgb(173, 216, 230);
+  cursor: pointer;
+}
+
+.step-day img, .step-mon img, .step-ann img, .step img {  
   width: 98%;
-  padding:2px;
+  height: 98%;
+  padding:1px;
   }  
 
 #forward {  
-  float: inline-end;  
+  order: 3;
 }  
 
 #reverse {  
-  float: inline-start;  
+  order: 1;
+}
+
+.legend-control-container-day, .legend-control-container-mon, .legend-control-container-ann, .legend-control-container {
+  display:block;
+  border: 1px solid rgba(30, 143, 255, 0.2);
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 1));
+  width:fit-content;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.temporalLegend-day, .temporalLegend-mon, .temporalLegend-ann, .temporalLegend {
+  text-align: center;
+}
+
+/*Other website styling*/
+/*Much of the below CSS comes from W3 Schools: https://www.w3schools.com/css/tryit.asp?filename=trycss_website_layout_blog */
+/*With modifications by Jessica Steslow*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 10px;
+  max-width: 1600px;
+  margin:auto;
+}
+
+#grad1 {
+  height: auto;
+  background-color: #f1f1f1; /*For browsers that do not support gradients*/
+  background-image: linear-gradient(to bottom, #f1f1f1, rgb(236, 241, 243), rgb(210, 237, 247));
+}
+
+/*
+.btn-group .button {
+  background-color: #4CAF50; // Green
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: none;
+}
+
+.btn-group .button:not(:last-child) {
+  border-right: none; //Prevent double borders
+}
+
+.btn-group .button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #2557bc;
+}
+*/
+
+/* Header/Blog Title */
+.header {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 80%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 20%;
+  /*background-color: #f1f1f1; default with theme but conflicts with gradient*/
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+.mapcard {
+  background-color: #eee;
+  height: 500px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  padding-top:10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: left;
+  background: rgba(138, 167, 191, 0.4);
+  margin-top: 20px;
+  color: rgb(74, 97, 118);
+  border-radius: 10px;
+}
+
+.moved-attribution {
+  display:none;
+}
+
+/*Responsive layout - when the screen is medium-large, make the right column text smaller. Increase again when columns stack.*/
+@media screen and (max-width:1000px) and (min-width:800px) {
+
+  .rightcolumn, .footer {
+    font-size: small;
+  }
+
+  .rightcolumn .card {
+    padding: 10px;
+  }
+
+  .rightcolumn h3 {
+    margin-top: 0px;
+  }
+
+  .header h1{
+    font-size: 35px;
+  }
+
+  .footer {
+    font-size: small;
+  }
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+
+  .box {
+    float: left !important;
+    width: fit-content !important;
+    text-align: left !important;
+    padding: 0 !important;
+    padding-right:100px !important;
+  }
+
+  .nametag {
+    display: none;
+  }
+
+  .header h1{
+    font-size: 35px;
+  }
+
+  /*When the screen is less than 800px wide, remove basemap attribution in leaflet map, show attrbution in footer*/
+  .leaflet-control-attribution {
+    display:none;
+  }
+
+  .moved-attribution {
+    display:block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .legend-control-container-day {
+    transform: translateY(-45px);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .legend-control-container-mon, .legend-control-container-ann, .legend-control-container {
+    transform: translateY(-45px);
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*Responsive Layout - when the screen is large, make the item sticky to the top of the page*/
+@media screen and (min-width: 800px) {
+  .rightcolumn {
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+}
+
+/*Responsive Layout - when the screen is very large, make the map display bigger*/
+@media screen and (min-width: 1400px) {
+  .mapcard {
+    height: 600px;
+  }
+}
+
+.box {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ul {
+  list-style-position: outside;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+}
+
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: forestgreen;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: dodgerblue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: #8f3f97;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.nametag {
+  position:absolute;
+  top: 0px;
+  right: 15px;
+  width: fit-content;
+  height: auto;
+  margin: 0;
+  color:#999;
+  font-size: 14px;
+  text-align: right;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  background-color:  rgb(236, 236, 236);
+  border:1px solid rgb(236, 241, 243);
+  border-radius: 4px;
+  margin: 6px;
+  padding:2px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
