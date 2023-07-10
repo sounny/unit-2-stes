@@ -10,7 +10,8 @@ function createMapDay(){
     //create the map, centered apprx. on the center of my US city data
     map_day = L.map('mapcard-daily', {
         center: [38, -97],
-        zoom: 4
+        zoom: 4,
+        scrollWheelZoom: false
     });
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -165,7 +166,7 @@ function updateLegendDay(attribute) {
         var radius = calcPropRadiusDay(circleValues[key]);
         var fill = groupPropColorDay(circleValues[key]);
 
-        document.querySelector("#" + key).setAttribute("cy", 59 - radius);
+        document.querySelector("#" + key).setAttribute("cy", 79 - radius);
         document.querySelector("#" + key).setAttribute("r", radius)
         document.querySelector("#" + key).setAttribute("fill", fill)
 
@@ -298,10 +299,10 @@ function createLegendDay(attributes) {
             //create the control container with a particular class name
             var container = L.DomUtil.create("div", "legend-control-container-day");
 
-            container.innerHTML = '<p class="temporalLegend-day">Median AQI on <span class="calDay-day">1/1/21</span></p>'
+            container.innerHTML = '<p class="temporalLegend-day">Stats of <br>Median AQI on <span class="calDay-day">1/1/21</span></p>'
 
             //Step 1. start attribute legend svg string
-            var svg = '<svg id="attribute-legend-day" width="160px" height="60px">';
+            var svg = '<svg id="attribute-legend-day" width="160px" height="80px">';
 
             //array of circle names to base loop on        
             var circles = ["maxDay", "meanDay", "minDay"];
@@ -310,7 +311,7 @@ function createLegendDay(attributes) {
             for (var i = 0; i < circles.length; i++) {
                 //calculate r and cy and fill color
                 var radius = calcPropRadiusDay(dayDataStats[circles[i]]);
-                var cy = 59 - radius;
+                var cy = 79 - radius;
                 var fill = groupPropColorDay(dayDataStats[circles[i]]);
 
                 //circle string
@@ -318,7 +319,7 @@ function createLegendDay(attributes) {
                     cy + '" fill="' + fill + '"fill-opacity="0.9" stroke="#000000" cx="45"/>';
 
                 //evenly space out labels
-                var textY = i * 20 + 20;
+                var textY = i * 20 + 35;
 
                 //text string
                 svg += '<text id="' + circles[i] + '-text-day" x="85" y="' + textY + '">' +

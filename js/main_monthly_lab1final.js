@@ -1,9 +1,9 @@
-/*Author: Jessica Steslow, 6-27-2023*/
+/*Author: Jessica Steslow, 6-28-2023*/
 
 //declare map variable globally so all functions have access
 var map_mon;
-var minValue;
-var calendar = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+var monDataStats = {};
+var monDataCalendar = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
 //function to instantiate the Leaflet map
 function createMapMon(){
@@ -11,7 +11,8 @@ function createMapMon(){
     //create the map, centered apprx. on the center of my US city data
     map_mon = L.map('mapcard-monthly', {
         center: [38, -97],
-        zoom: 4
+        zoom: 4,
+        scrollWheelZoom: false
     });
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -22,9 +23,9 @@ function createMapMon(){
     
     //call getData function
     getDataMon(map_mon);
-};
+}
 
-function calcMinValueMon(data){
+function calcStatsMon(data){
     //create empty array to store all data values
     var allValues = [];
     //loop through each city
@@ -32,52 +33,56 @@ function calcMinValueMon(data){
         //loop through each 12 month cycle
         for(var i = 0; i <=11; i+=1){
             //get air quality for current month
-            var value = city.properties[calendar[i]+String("_2021")];
+            var value = city.properties[monDataCalendar[i]+String("_2021")];
             //add value to array
             allValues.push(value);
         }
     }
-    //get minimum value of our array
-    var minValue = Math.min(...allValues)
-    return minValue;
+    monDataStats.minMon = Math.min(...allValues);  //get min, max, mean stats for our array
+    monDataStats.maxMon = Math.max(...allValues);
+    var sum = allValues.reduce(function(a, b){return a+b;});    //calculate meanValue
+    monDataStats.meanMon = sum/allValues.length;
+    console.log("Mon stats: ",monDataStats);
 }
 
 //calculate the radius of each proportional symbol
 function calcPropRadiusMon(attValue) {
     //constant factor adjusts symbol sizes evenly
-    var minRadius = 6;
+    var minRadius = 8;
     //Flannery Apperance Compensation formula
-    var radius = 1.0083 * Math.pow(attValue/minValue,0.5715*1.8) * minRadius //1.8 is custom exaggeration
+    var radius = 1.0083 * Math.pow(attValue / monDataStats.minMon,0.5715) * minRadius
+    //var radius = 1.0083 * Math.pow(attValue / 28,0.5715) * minRadius  //Using 28 as rounded min, same scale as Annual data
     return radius;
-};
+}
 
 //function to categorize proportional symbol color by AQI value
 function groupPropColorMon(attValue) {
-    var aqiColor = "";
-    if ( attValue <= 50) {           //Green, Good
+    var aqiColor = "#add836";         //Setting default color (light blue)
+    if ( attValue <= 50) {            //Green, Good
         aqiColor = "#00e400";
-    } else if ( attValue < 100) {    //Yellow, Moderate
+    } else if ( attValue <= 100) {    //Yellow, Moderate
         aqiColor = "#ffff00";
-    } else if ( attValue < 150) {    //Orange, Unhealthy for Sensitive Groups
+    } else if ( attValue <= 150) {    //Orange, Unhealthy for Sensitive Groups
         aqiColor = "#ff7e00";
-    } else if ( attValue < 200) {    //Red, Unhealthy
+    } else if ( attValue <= 200) {    //Red, Unhealthy
         aqiColor = "#ff0000";
-    } else if ( attValue < 300) {    //Purple, Very Unhealthy
+    } else if ( attValue <= 300) {    //Purple, Very Unhealthy
         aqiColor = "#8f3f97";
-    } else {                         //Maroon, Hazardous
+    } else {                          //Maroon, Hazardous
         aqiColor = "#7e0023";
-    };
+    }
     return aqiColor;
 }
 
 //function to convert markers to circle markers and add popups
-function pointToLayer(feature, latlng, attributes){
+function pointToLayerMon(feature, latlng, attributes){
     //Determine which attribute to visualize with proportional symbols
     var attribute = attributes[0];
 
     //create marker options
     var options = {
-        color: "#000",
+        //fillColor: "#ff7800",  //fillColor is usually in Options, but I made it dynamic
+        color: "#000",           //outline color
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
@@ -96,7 +101,7 @@ function pointToLayer(feature, latlng, attributes){
     var layer = L.circleMarker(latlng, options);
 
     //build popup content string starting with city...Example 2.1 line 24
-    var popupContent = "<p><b>Metro:</b> " + feature.properties.CBSA + "</p>";
+    var popupContent = "<p><b>CBSA:</b> " + feature.properties.CBSA + "</p>";
 
     //add formatted attribute to popup content string
     var month = attribute.split("_")[0];
@@ -109,16 +114,63 @@ function pointToLayer(feature, latlng, attributes){
 
     //return the circle marker to the L.geoJson pointToLayer option
     return layer;
-};
+}
 
 function createPropSymbolsMon(data, attributes){
     //create a Leaflet GeoJSON layer and add it to the map
     L.geoJson(data, {
         pointToLayer: function(feature, latlng){
-            return pointToLayer(feature, latlng, attributes);
+            return pointToLayerMon(feature, latlng, attributes);
         }
     }).addTo(map_mon);
-};
+}
+
+function getCircleValuesMon(attribute) {
+    //start with min at highest possible and max at lowest possible
+    var min = Infinity, max = -Infinity;
+
+    map_mon.eachLayer(function (layer) {
+        //get the attribute value
+        if (layer.feature) {
+            var attributeValue = Number(layer.feature.properties[attribute]);
+
+            if (attributeValue < min) {min = attributeValue;}  //test for min
+            if (attributeValue > max) {max = attributeValue;}  //test for max
+        }
+    });
+
+    var mean = (max + min) / 2;  //set mean
+
+    return {          //return as an object Mon specific
+        maxMon: max,
+        meanMon: mean,
+        minMon: min,
+    };
+}
+
+function updateLegendMon(attribute) {
+    //create content for legend
+    var month = attribute.split("_")[0];
+    //replace legent content
+    //note on weird formatting: month is the unit for changing timestamps, -mon suffix for dataset reference
+    //I'm using -mon here for consistency with this JS and the related -ann data and JS
+    document.querySelector("span.month-mon").innerHTML = month;  
+
+    //get the max, mean, and min value as an object
+    var circleValues = getCircleValuesMon(attribute);
+
+    for (var key in circleValues) {
+        //get the radius and fill
+        var radius = calcPropRadiusMon(circleValues[key]);
+        var fill = groupPropColorMon(circleValues[key]);
+
+        document.querySelector("#" + key).setAttribute("cy", 59 - radius);
+        document.querySelector("#" + key).setAttribute("r", radius)
+        document.querySelector("#" + key).setAttribute("fill", fill)
+
+        document.querySelector("#" + key + "-text-mon").textContent = Math.round(circleValues[key] * 100) / 100 + " " + key.slice(0,-3);
+    }
+}
 
 //Step 10: Resize proportional symbols according to new attribute values
 function updatePropSymbolsMon(attribute){
@@ -137,7 +189,7 @@ function updatePropSymbolsMon(attribute){
            layer.setStyle({fillColor: newColor});
 
            //add city to popup content string
-           var popupContent = "<p><b>Metro:</b> " + props.CBSA + "</p>";
+           var popupContent = "<p><b>CBSA:</b> " + props.CBSA + "</p>";
 
            //add formatted attribute to panel content string
            var month = attribute.split("_")[0];
@@ -146,10 +198,11 @@ function updatePropSymbolsMon(attribute){
            //update popup with new content
            popup = layer.getPopup();
            popup.setContent(popupContent).update();
-
         };
     });
-};
+
+    updateLegendMon(attribute);
+}
 
 function processDataMon(data){
     //empty array to hold attributes
@@ -165,18 +218,15 @@ function processDataMon(data){
             attributes.push(attribute);
         };
     };
-
     return attributes;
-};
+}
 
 
 //Create new sequence controls
 function createSequenceControlsMon(attributes){   
     
     var SequenceControl = L.Control.extend({
-        options: {
-            position: 'bottomleft'
-        },
+        options: {position: 'bottomleft',},
 
         onAdd: function () {
             // create the control container div with a particular class name
@@ -196,7 +246,6 @@ function createSequenceControlsMon(attributes){
         }
     });
     
-
     map_mon.addControl(new SequenceControl());
 
     ///////add listeners after adding the control!///////
@@ -238,7 +287,56 @@ function createSequenceControlsMon(attributes){
         //Step 9: pass new attribute to update symbols
         updatePropSymbolsMon(attributes[index]);
     });
-};
+}
+
+function createLegendMon(attributes) {
+    var LegendControl = L.Control.extend({
+        options: {position: 'bottomright',},
+
+        onAdd: function () {
+            //create the control container with a particular class name
+            var container = L.DomUtil.create("div", "legend-control-container-mon");
+
+            container.innerHTML = '<p class="temporalLegend-mon">Stats of <br>Median AQI in <span class="month-mon">Jan</span></p>'
+
+            //Step 1. start attribute legend svg string
+            var svg = '<svg id="attribute-legend-mon" width="160px" height="60px">';
+
+            //array of circle names to base loop on        
+            var circles = ["maxMon", "meanMon", "minMon"];
+
+            //Step 2: loop to add each circle and text to svg string
+            for (var i = 0; i < circles.length; i++) {
+                //calculate r and cy and fill color
+                var radius = calcPropRadiusMon(monDataStats[circles[i]]);
+                var cy = 59 - radius;
+                var fill = groupPropColorMon(monDataStats[circles[i]]);
+
+                //circle string
+                svg += '<circle class="legend-circle-mon" id="' + circles[i] + '" r="' + radius + '"cy="' +
+                    cy + '" fill="' + fill + '"fill-opacity="0.9" stroke="#000000" cx="45"/>';
+
+                //evenly space out labels
+                var textY = i * 20 + 20;
+
+                //text string
+                svg += '<text id="' + circles[i] + '-text-mon" x="85" y="' + textY + '">' +
+                    Math.round(monDataStats[circles[i]] * 100) / 100 + " " + circles[i].slice(0,-3) + "</text>";
+            }
+
+            //close svg string
+            svg += "</svg>";
+
+            //add attribute legend svg to container
+            container.insertAdjacentHTML('beforeend', svg);
+
+            return container;
+        },
+    });
+
+    map_mon.addControl(new LegendControl());
+    updateLegendMon(attributes[0]); //change the legend-as-created from DataStats values to max-mean-min of first city
+}
 
 function getDataMon(map_mon){
     //load the data
@@ -248,11 +346,12 @@ function getDataMon(map_mon){
         })
         .then(function(json){
             var attributes = processDataMon(json);
-            minValue = calcMinValueMon(json);
+            calcStatsMon(json);
             //call function to create proportional symbols
             createPropSymbolsMon(json, attributes);
             createSequenceControlsMon(attributes);
+            createLegendMon(attributes);
         })
-};
+}
 
 document.addEventListener('DOMContentLoaded',createMapMon);

@@ -19,23 +19,25 @@
         
     </head>
 
-    <body id="grad1">   
+    <body id="grad1">
+        
+        <div class="sidebar">
+            <div id = "sidebar-gap"></div>
+            <div id="nav-title">Nav Links</div>
+            <a href="#">Top of Page</a>
+            <a href="#annual-bkmk">Annual</a>
+            <a href="#monthly-bkmk">Monthly</a>
+            <a href="#daily-bkmk">Daily</a>
+        </div>
+
+        <div class="content">
         <div class="header">
             <h1>Air Quality in USA Metro Areas</h1>
             <p>Using the Air Quality Index (AQI) as measured and collected by the U.S. Environmental Protection Agency (EPA).</p>
             <div class="nametag">
-                <p>Jessica Steslow <br>Geog 575 <br>Lab 1 Draft</p>
+                <p>Jessica Steslow <br>Geog 575 <br>Lab 1</p>
             </div>
         </div>
-        
-        <!-- I don't think this site needs a navbar
-        <div class="topnav">
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#" style="float:right">Link</a>
-        </div>
-        -->
         
         <div class="row">
             <div class="leftcolumn">
@@ -58,13 +60,10 @@
                     <dd>U.S. EPA Core Based Statistical Area (CBSA) is a term used for metro areas. I narrowed my analysis to the top 40 most populated metro areas.</dd>
                 </dl>
             </div>
-            <div class="card">
-                <h2>MegaCities Example</h2>
-                <div class="mapcard" id="mapcard-megacities"></div>
-            </div>
-            <div class="card">
+            <div class="card" id="annual-bkmk">
                 <h2>Median Annual AQI in USA Metro Areas 2000-2022</h2>
                 <div class="mapcard"  id="mapcard-annual"></div>
+                <div class = "cityList_ann"></div>
                 <p>This map looks at trends in the median AQI value over the whole year, for the years 2000-2022.</p>
                 <p>AQI is known to vary quite drastically daily, monthly, seasonally, and in response to accute events (wildfires, for example), and thus AQI is typically 
                     evaluated with more granualar time data. This map explores AQI with "course" time data, looking at the median value over a full year.
@@ -72,7 +71,7 @@
                 <p>This analysis shows the yearly median AQI is relatively consistent in metro areas between years. We also see AQI values generally decrease across all metro areas.
                 </p>
             </div>
-            <div class="card">
+            <div class="card" id="monthly-bkmk">
                 <h2>Median Monthly AQI in USA Metro Areas 2021</h2>
                 <div class="mapcard"  id="mapcard-monthly"></div>
                 <p>This map evaluates AQI trends in the same metro areas as the first map, but with median AQI calculated per month in 2021.</p>
@@ -81,7 +80,7 @@
                     This data also shows higher AQI in the summer season, which is a known pattern with air quality: AQI is usually worse with high heat.
                 </p>
             </div>
-            <div class="card">
+            <div class="card" id="daily-bkmk">
                 <h2>Median Daily AQI in USA Metro Areas 2021</h2>
                 <div class="mapcard"  id="mapcard-daily"></div>
                 <p>This map evaluates AQI trends in the same metro areas as the first two maps, but with median AQI calculated per day in 2021.</p>
@@ -152,17 +151,15 @@
             </div>
             </div>
         </div>
+        <div style="padding-bottom:20px; float:inline-end"></div> <!-- Brings gradient past the footer, related to float in divs-->
+        </div>
     
-    </body>
-
 
         <!--put your external script links here-->
         <script type="text/javascript" src="lib/leaflet/leaflet-src.js"></script>
         <script type="text/javascript" src="lib/leaflet/leaflet-providers.js"></script>
-        <script type="text/javascript" src="js/ch6_example3.7.js"></script>
-        <script type="text/javascript" src="js/lab1mod3_annual.js"></script>
-        <script type="text/javascript" src="js/lab1mod3_monthly.js"></script>
-        <script type="text/javascript" src="js/lab1mod3_daily.js"></script>
-
+        <script type="text/javascript" src="js/main_annual_lab1final.js"></script>
+        <script type="text/javascript" src="js/main_monthly_lab1final.js"></script>
+        <script type="text/javascript" src="js/main_daily_lab1final.js"></script>
     </body>
 </html>
